@@ -46,7 +46,7 @@ class DatabaseService {
         let ref = Database.database().reference(withPath: "users")
         ref.observe(.value){ snapshot in
             let users = snapshot.children.flatMap{
-                return UserModel(dictionary: $0 as! [String : AnyObject])
+                return UserModel(dictionary: $0 as! DataSnapshot)
             }
             complition(users)
         }

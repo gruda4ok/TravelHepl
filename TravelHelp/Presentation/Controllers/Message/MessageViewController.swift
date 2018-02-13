@@ -112,7 +112,7 @@ extension MessageViewController {
             guard let dictionarys = snapshot.value as? [String: AnyObject] else {
                 return
             }
-            let user = UserModel(dictionary: dictionarys )
+            let user = UserModel(dictionary: dictionarys as! DataSnapshot )
             self?.showConversationController(forUser: user! )
             }, withCancel: nil)
     }

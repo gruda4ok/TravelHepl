@@ -16,6 +16,7 @@ struct Route: Decodable {
     let overview_polyline: Polyline
     let summary: String
 }
+
 struct Polyline: Decodable {
     let points: String
 }

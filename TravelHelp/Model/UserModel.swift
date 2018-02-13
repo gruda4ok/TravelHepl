@@ -24,8 +24,9 @@ class UserModel {
         self.uid = user.uid
         self.email = email
     }
-    init?(dictionary: [String: AnyObject]) {
-        self.uid = (dictionary["uid"] as? String)!
-        self.email = (dictionary["email"] as? String)!
+    init?(dictionary: DataSnapshot) {
+        guard let snapshotValue = dictionary.value as? [String: AnyObject] else  {return nil}
+        self.uid = snapshotValue["uid"] as? String ?? ""
+        self.email = snapshotValue["email"] as? String ?? ""
     }
 }

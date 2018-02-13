@@ -22,9 +22,7 @@ class AccountsViewController: UITableViewController {
         reloadData()
         tableView.reloadData()
     }
-
     
-    // MARK:
     override func numberOfSections(in tableView: UITableView) -> Int {
         if itemsGroupedByService != nil {
             let services = Array(itemsGroupedByService!.keys)

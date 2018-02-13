@@ -28,9 +28,10 @@ class MenuViewController: UIViewController  {
     }
     
     func setupInterface() {
+    //TODO: CHANGE TABLE VIEW SETUP
         //tableView.tableFooterView = UIView()
-//        tableView.separatorStyle = .none
-//        tableView.backgroundColor = UIColor.clear
+        //tableView.separatorStyle = .none
+        //tableView.backgroundColor = UIColor.clear
     }
     
     func setupAccoutKit() {

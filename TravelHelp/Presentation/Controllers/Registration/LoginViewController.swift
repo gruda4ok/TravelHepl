@@ -35,7 +35,10 @@ class LoginViewController: UIViewController {
         setupNotification()
         setupInterface()
         authenticateUser()
-       
+        checkAccountKit()
+    }
+    
+    func checkAccountKit() {
         if accoutnKit == nil {
             self.accoutnKit = AKFAccountKit(responseType: .accessToken)
         }
@@ -51,7 +54,6 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
     }
     
-    
     func didStartYourLoading() {
         loginButton.startLoadingAnimation()
     }
@@ -63,7 +65,6 @@ class LoginViewController: UIViewController {
             self.present(secondVC, animated: true, completion: nil)
         }
     }
-    
     
     @IBAction func loginButtonClicked(_ sender: UIButton) {
         let loginManager = LoginManager()
@@ -98,7 +99,6 @@ class LoginViewController: UIViewController {
         logInEmail.layer.cornerRadius = logInEmail.frame.height / 2
         logInPhone.layer.cornerRadius = logInPhone.frame.height / 2
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

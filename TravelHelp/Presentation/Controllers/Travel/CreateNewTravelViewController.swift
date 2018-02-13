@@ -201,7 +201,6 @@ class CreateNewTravelViewController: UIViewController {
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: {
             (alert) -> Void in
             let price = alertController.textFields?.first
-            //let priceFor = alertController.textFields!.dropFirst().first
             self.priceArray.append((price?.text)!)
             self.pricesTableView.reloadData()
         })

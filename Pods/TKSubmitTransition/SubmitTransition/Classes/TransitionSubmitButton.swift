@@ -22,11 +22,11 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
     let shrinkCurve = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     let expandCurve = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
     let shrinkDuration: CFTimeInterval  = 0.1
-//    @IBInspectable open var normalCornerRadius:CGFloat? = 0.0{
-//        didSet {
-//            self.layer.cornerRadius = normalCornerRadius!
-//        }
-//    }
+    var normalCornerRadius:CGFloat? = 0.0{
+        didSet {
+            self.layer.cornerRadius = normalCornerRadius!
+        }
+    }
 
     var cachedTitle: String?
 
@@ -56,7 +56,6 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
                     self.spiner.animation()
                 }
         }) 
-        
     }
 
     open func startFinishAnimation(_ delay: TimeInterval, completion:(()->())?) {
@@ -88,7 +87,6 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
     }
     
     open func returnToOriginalState() {
-        
         self.layer.removeAllAnimations()
         self.setTitle(self.cachedTitle, for: UIControlState())
         self.spiner.stopAnimation()
@@ -116,5 +114,4 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
         expandAnim.isRemovedOnCompletion = false
         layer.add(expandAnim, forKey: expandAnim.keyPath)
     }
-    
 }
